@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+       body {
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    
+    .dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+    
+    .container {
+      margin: 50px ;
+      text-align: center;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #3e8e41;
+    }
+    
+    .boxed-button {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #567d1f;
+    }
+    
+    .boxed-button:hover {
+      background-color: #e0e0e0;
+    }
+    
+   </style>
+  <title>Add Two Numbers and Toggle Theme</title>
+  
+</head>
+<body>
+  <div class="container">
+    <h1>Add Two Numbers</h1>
+    <input type="number" id="num1" placeholder="Enter first number" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+    <br></br>
+    <input type="number" id="num2" placeholder="Enter second number" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+    <button class="boxed-button" onclick="addNumbers()">Add</button>
+    <p id="result"></p>
+    <button class="boxed-button" onclick="toggleTheme()"> Dark Mode</button>
+  </div>
+  <script>
+      function addNumbers() {
+      const num1 = parseFloat(document.getElementById('num1').value);
+      const num2 = parseFloat(document.getElementById('num2').value);
+      if (isNaN(num1) || isNaN(num2)) {
+        document.getElementById('result').innerText = 'Please enter valid numbers.';
+      } else {
+        const sum = num1 + num2;
+        document.getElementById('result').innerText = `Sum: ${sum}`;
+      }
+    }
+    
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+    
+  </script>
+</body>
+</html>
